@@ -19,6 +19,7 @@ class VerifySimpleToken
                 return $next($request);
             }
         }
+
         return response('Unauthorized.', 401);
     }
 }
