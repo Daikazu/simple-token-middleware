@@ -2,14 +2,13 @@
 
 namespace Daikazu\SimpleTokenMiddleware\Tests;
 
+use Route;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Route;
-use Symfony\Component\HttpKernel\Exception\HttpException;
+use Orchestra\Testbench\TestCase;
+use Daikazu\SimpleTokenMiddleware\ServiceProvider;
 use Daikazu\SimpleTokenMiddleware\Facades\SimpleTokenMiddleware;
 use Daikazu\SimpleTokenMiddleware\Http\Middleware\VerifySimpleToken;
-use Daikazu\SimpleTokenMiddleware\ServiceProvider;
-use Orchestra\Testbench\TestCase;
 
 class SimpleTokenMiddlewareTest extends TestCase
 {
@@ -31,7 +30,6 @@ class SimpleTokenMiddlewareTest extends TestCase
         $app['config']->set('simple-token-middleware.token', 'my_secret_token');
     }
 
-
     protected function setUp(): void
     {
         parent::setUp();
@@ -39,8 +37,6 @@ class SimpleTokenMiddlewareTest extends TestCase
         Route::middleware('simple.token')->any('/_test/webhook', function () {
             return 'OK';
         });
-
-
     }
 
     /** @test */
@@ -58,47 +54,37 @@ class SimpleTokenMiddlewareTest extends TestCase
             $this->assertEquals($token, $req->token);
             $this->assertNotEquals('NOT_MY_TOKEN', $req->token);
         });
-
     }
 
     /** @test */
     public function isForbiddenWhenNoTokenIsProvided()
     {
-
         $response = $this->post('/_test/webhook', [
             'timestamp' => abs(time() - 100),
         ]);
 
         $this->assertEquals(Response::HTTP_UNAUTHORIZED, $response->getStatusCode());
-
     }
 
     /** @test */
     public function isForbiddenWhenInvalidTokenIsProvided()
     {
-
         $response = $this->post('/_test/webhook', [
             'timestamp' => abs(time() - 100),
             'token'     => 'invalid_token',
         ]);
 
         $this->assertEquals(Response::HTTP_UNAUTHORIZED, $response->getStatusCode());
-
     }
-
 
     /** @test */
     public function isOkWhenValidTokenIsProvided()
     {
-
         $response = $this->post('/_test/webhook', [
             'timestamp' => abs(time() - 100),
             'token'     => config('simple-token-middleware.token'),
         ]);
 
         $this->assertEquals(Response::HTTP_OK, $response->getStatusCode());
-
     }
-
-
 }

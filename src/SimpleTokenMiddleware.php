@@ -2,5 +2,6 @@
 
 namespace Daikazu\SimpleTokenMiddleware;
 
-class SimpleTokenMiddleware{
+class SimpleTokenMiddleware
+{
 }
