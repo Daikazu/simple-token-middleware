@@ -1,6 +1,6 @@
 # Simple Token Middleware
 
-[![Build Status](https://travis-ci.org/daikazu/simple-token-middleware.svg?branch=master)](https://travis-ci.org/daikazu/simple-token-middleware)
+[![Build Status](https://travis-ci.com/Daikazu/simple-token-middleware.svg?branch=master)](https://travis-ci.com/Daikazu/simple-token-middleware)
 [![styleci](https://styleci.io/repos/176398914/shield)](https://styleci.io/repos/176398914)
 
 [![Packagist](https://img.shields.io/packagist/v/daikazu/simple-token-middleware.svg)](https://packagist.org/packages/daikazu/simple-token-middleware)
