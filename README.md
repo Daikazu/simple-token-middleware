@@ -2,9 +2,6 @@
 
 [![Build Status](https://travis-ci.org/daikazu/simple-token-middleware.svg?branch=master)](https://travis-ci.org/daikazu/simple-token-middleware)
 [![styleci](https://styleci.io/repos/176398914/shield)](https://styleci.io/repos/176398914)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/daikazu/simple-token-middleware/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/daikazu/simple-token-middleware/?branch=master)
-<!--[![SensioLabsInsight](https://insight.sensiolabs.com/projects/CHANGEME/mini.png)](https://insight.sensiolabs.com/projects/CHANGEME)-->
-<!--[![Coverage Status](https://coveralls.io/repos/github/daikazu/simple-token-middleware/badge.svg?branch=master)](https://coveralls.io/github/daikazu/simple-token-middleware?branch=master)-->
 
 [![Packagist](https://img.shields.io/packagist/v/daikazu/simple-token-middleware.svg)](https://packagist.org/packages/daikazu/simple-token-middleware)
 [![Packagist](https://poser.pugx.org/daikazu/simple-token-middleware/d/total.svg)](https://packagist.org/packages/daikazu/simple-token-middleware)
