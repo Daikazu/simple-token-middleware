@@ -6,7 +6,7 @@ use Daikazu\SimpleTokenMiddleware\Http\Middleware\VerifySimpleToken;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
-    const CONFIG_PATH = __DIR__ . '/../config/simple-token-middleware.php';
+    const CONFIG_PATH = __DIR__.'/../config/simple-token-middleware.php';
 
     public function boot()
     {
